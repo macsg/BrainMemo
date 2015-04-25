@@ -1,25 +1,25 @@
-<div style="display:none; margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+<div style="margin-top: 150px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
     <div class="panel panel-info">
         <div class="panel-heading">
-            <div class="panel-title">Sign Up</div>
-            <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Sign In</a></div>
+            <div class="panel-title">Register</div>
+            <div style="float:right; font-size: 80%; position: relative; top:-10px"><?php echo $this->Html->link('Back to login', array('controller' => 'users', 'action' => 'login'));?></div>
         </div>
         <div class="panel-body" >
-            <form id="signupform" class="form-horizontal" role="form">
-
+            <?php
+            echo $this->Form->create('User', array(
+                'class' => 'form-horizontal'
+            ));
+            ?>
                 <div id="signupalert" style="display:none" class="alert alert-danger">
                     <p>Error:</p>
                     <span></span>
                 </div>
-
-
                 <div class="form-group">
-                    <label for="email" class="col-md-3 control-label">Email</label>
+                    <label for="username" class="col-md-3 control-label">Username</label>
                     <div class="col-md-9">
-                        <input type="text" class="form-control" name="email" placeholder="Email Address">
+                        <input type="text" class="form-control" name="username" placeholder="Username">
                     </div>
                 </div>
-
                 <div class="form-group">
                     <label for="firstname" class="col-md-3 control-label">First Name</label>
                     <div class="col-md-9">
@@ -33,46 +33,42 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label for="email" class="col-md-3 control-label">Email</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" name="email" placeholder="Email Address">
+                    </div>
+                </div>
+                <div class="form-group">
                     <label for="password" class="col-md-3 control-label">Password</label>
                     <div class="col-md-9">
-                        <input type="password" class="form-control" name="passwd" placeholder="Password">
+                        <input type="password" class="form-control" name="password" placeholder="Password">
                     </div>
                 </div>
-
                 <div class="form-group">
-                    <label for="icode" class="col-md-3 control-label">Invitation Code</label>
+                    <label for="status" class="col-md-3 control-label">Status</label>
                     <div class="col-md-9">
-                        <input type="text" class="form-control" name="icode" placeholder="">
+                        <input type="password" class="form-control" name="status" placeholder="Status">
                     </div>
                 </div>
-
                 <div class="form-group">
                     <!-- Button -->
                     <div class="col-md-offset-3 col-md-9">
-                        <button id="btn-signup" type="button" class="btn btn-info"><i class="icon-hand-right"></i> &nbsp Sign Up</button>
+                        <?php echo $this->Form->button('Sign Up', array(
+                            'class' => 'btn btn-info',
+                            'type' => 'submit'));
+                        ?>
                         <span style="margin-left:8px;">or</span>
                     </div>
                 </div>
 
+
+
                 <div style="border-top: 1px solid #999; padding-top:20px"  class="form-group">
-
                     <div class="col-md-offset-3 col-md-9">
-                        <button id="btn-fbsignup" type="button" class="btn btn-primary"><i class="icon-facebook"></i>   Sign Up with Facebook</button>
+                        <button id="btn-fbsignup" type="button" class="btn btn-primary"><i class="icon-facebook"></i>   Register with Facebook</button>
                     </div>
-
                 </div>
             </form>
         </div>
     </div>
 </div>
-<h2><?php echo __('Register'); ?></h2>
-<?php
-echo $this->Form->create('User');
-echo $this->Form->inputs(array(
-    'username',
-    'firstname',
-    'lastname',
-    'email',
-    'password',
-    'status'));
-echo $this->Form->end(__('Register'));
