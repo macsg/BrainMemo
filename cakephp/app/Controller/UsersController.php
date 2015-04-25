@@ -4,7 +4,7 @@ App::uses('AppController', 'Controller');
 class UsersController extends AppController {
     public function beforeFilter() {
         parent::beforeFilter();
-        $this->Auth->allow();
+        $this->Auth->allow('register', 'logout');
     }
 
     public function register() {
@@ -23,7 +23,7 @@ class UsersController extends AppController {
             if  ($this->Auth->login()) {
                 return $this->redirect($this->Auth->redirectUrl());
             }
-            $this->Session->setFlash(__('Incorrect username or password'));
+            $this->Session->setFlash(__('Invalid username or password, try again'));
         }
     }
 
