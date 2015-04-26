@@ -8,6 +8,7 @@ class UsersController extends AppController {
     }
 
     public function register() {
+        $this->layout = 'login';
         if ($this->request->is('post')) {
             $this->User->create();
             if ($this->User->save($this->request->data)) {
@@ -19,6 +20,7 @@ class UsersController extends AppController {
     }
 
     public function login() {
+        $this->layout = 'login';
         if ($this->request->is('post')) {
             if  ($this->Auth->login()) {
                 return $this->redirect($this->Auth->redirectUrl());
