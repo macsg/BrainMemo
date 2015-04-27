@@ -3,7 +3,7 @@
     <div class="panel panel-info" >
         <div class="panel-heading">
             <div class="panel-title">Sign In</div>
-            
+            <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">Forgot password?</a></div>
         </div>
 
         <div style="padding-top:30px" class="panel-body" >
@@ -50,11 +50,8 @@
                 <div class="form-group">
                     <div class="col-md-12 control">
                         <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
-                            Not on BrainMemo
+                            Don't have an account!
                             <?php echo $this->Html->link("Sign Up Here", array('controller' => 'users', 'action' => 'register')); ?>
-                            <span>or</span>
-                            <?php echo $this->Html->link("Forgot password?", array('controller' => 'users', 'action' => 'register')); ?>                            
-
                         </div>
                     </div>
                 </div>
