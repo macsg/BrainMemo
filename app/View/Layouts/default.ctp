@@ -68,7 +68,9 @@
                             <li><a href="#">Action 2</a></li>
                             <li><a href="#">Action 3</a></li>
                             <li class="divider"></li>
-                            <li><a href="#">LOGOUT</a></li>
+                            <li><?php echo $this->Html->link('LOGOUT', array(
+                                    'controller' => 'users',
+                                    'action' => 'logout'));?></li>
                         </ul>
                     </li>
 
