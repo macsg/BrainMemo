@@ -29,7 +29,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Brain Memo</a>
+                <?php 
+                    echo $this->Html->link('Brain Memo', array(
+                    'controller' => 'home'
+                    ), array(
+                    'class' => 'navbar-brand'
+                    ));
+                ?>
+                
+                <!-- <a class="navbar-brand" href="index.html">Brain Memo</a> -->
             </div>
 
             <!-- normal display -->
@@ -45,10 +53,13 @@
                         </div>
                     </form>
                     <li class="page-scroll">
-                        <a href="lessons.html">Lessons</a>
+                        <?php
+                        echo $this->Html->link('Lessons', array('controller' => 'lesson'));
+                        ?>
+                        <!-- <a href="lessons.html">Lessons</a> -->
                     </li>
                     <li class="page-scroll">
-                        <a href="create.html">Create</a>
+                        <?php echo $this->Html->link('Create', array('controller' => 'create'));?>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">USERS <span class="caret"></span></a>
@@ -87,13 +98,13 @@
 
                         <ul class="list-inline">
                             <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                                <a href="http://www.facebook.com" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
                             </li>
                             <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
+                                <a href="https://plus.google.com" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
                             </li>
                             <li>
-                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                                <a href="https://twitter.com/?lang=th" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
                             </li>
                         </ul>
                     </div>

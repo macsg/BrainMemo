@@ -65,9 +65,9 @@ class DATABASE_CONFIG {
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
 		'host' => 'ap-cdbr-azure-southeast-a.cloudapp.net',
-		'login' => 'b49234fc440c24',
-		'password' => '3d6ae4f7',
-		'database' => 'brainmeArRWg09Ay',
+		'login' => 'b4ff016490becc',
+		'password' => '0d841c2a',
+		'database' => 'brainmemodb',
 		'prefix' => '',
 		//'encoding' => 'utf8',
 	);
