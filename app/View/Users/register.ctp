@@ -2,7 +2,8 @@
     <div class="panel panel-info">
         <div class="panel-heading">
             <div class="panel-title">Register</div>
-            <div style="float:right; font-size: 80%; position: relative; top:-10px"><?php echo $this->Html->link('Back to login', array('controller' => 'users', 'action' => 'login'));?></div>
+            <div style="float:right; font-size: 90%; position: relative; top:-20px">
+                <?php echo $this->Html->link('Back to login', array('controller' => 'users', 'action' => 'login'), array('style' => 'color:white;'));?></div>            
         </div>
         <div class="panel-body" >
             <?php
@@ -26,7 +27,14 @@
                     <div class="col-md-9">
                         <input type="password" class="form-control" name="password" placeholder="Password">
                     </div>
-                </div>    
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="col-md-3 control-label">Confirm Password</label>
+                    <div class="col-md-9">
+                        <input type="password" class="form-control" name="confirmpassword" placeholder="Password Again">
+                    </div>
+                </div>  
 
                 <div class="form-group">
                     <label for="firstname" class="col-md-3 control-label">First Name</label>
@@ -56,17 +64,9 @@
                             'class' => 'btn btn-info',
                             'type' => 'submit'));
                         ?>
-                        <!-- <span style="margin-left:8px;">or</span> -->
                     </div>
                 </div>
 
-                
-
-<!--                 <div style="border-top: 1px solid #999; padding-top:20px"  class="form-group">
-                    <div class="col-md-offset-3 col-md-9">
-                        <button id="btn-fbsignup" type="button" class="btn btn-primary"><i class="icon-facebook"></i>   Register with Facebook</button>
-                    </div>
-                </div> -->
             </form>
         </div>
     </div>
