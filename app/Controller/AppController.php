@@ -46,11 +46,13 @@ class AppController extends Controller {
                 'Form' => array(
                     'passwordHasher' => 'Blowfish'
                 )
-            )
+            ),
+            'authError' => 'You must be logged in to view this page.',
+            'loginError' => 'Invalid Username or Password entered, please try again.'
         )
     );
 
     public function beforeFilter() {
-        $this->Auth->allow('display');
+        $this->Auth->allow('display', 'login');
     }
 }

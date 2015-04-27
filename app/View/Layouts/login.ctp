@@ -8,8 +8,9 @@
         <?php echo $this->fetch('title'); ?>
     </title>
     <?php
-    echo $this->Html->meta('icon');
+    echo $this->Html->meta('icon', $this->Html->url('/favicon.ico'));
     echo $this->Html->css('bootstrap/bootstrap.min.css');
+    echo $this->Html->css('login.css');
     echo $this->Html->script('jquery-2.1.3.min.js');
     echo $this->Html->script('bootstrap.min.js');
     echo $this->fetch('meta');

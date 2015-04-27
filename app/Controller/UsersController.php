@@ -39,11 +39,11 @@ class UsersController extends AppController {
 
     public function beforeFilter() {
         parent::beforeFilter();
-        $this->Auth->allow('register', 'logout');
+        $this->Auth->allow('login','register');
     }
 
     public function register() {
-        $this->layout = 'login';
+        $this->layout = 'register';
 
         if ($this->request->is('post')) {
             $this->User->create();
@@ -59,7 +59,7 @@ class UsersController extends AppController {
         $this->layout = 'login';
 
         if ($this->Session->check('Auth.User')) {
-            $this->redirect(array('action' => 'index'));
+            $this->redirect(array('controller' => 'home'));
         }
 
         if ($this->request->is('post')) {

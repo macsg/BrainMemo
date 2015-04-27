@@ -8,7 +8,7 @@
 		<?php echo $this->fetch('title'); ?>
 	</title>
 	<?php
-		echo $this->Html->meta('icon');
+        echo $this->Html->meta('icon', $this->Html->url('/favicon.ico'));
         echo $this->Html->css('bootstrap/bootstrap.min.css');
         echo $this->Html->css('font-awesome/font-awesome.min.css');
         echo $this->Html->css('style.css');
