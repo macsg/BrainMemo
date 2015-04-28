@@ -33,7 +33,7 @@
             <div class="col-sm-6 col-md-3">
                 <div class="thumbnail">
                     <h3>Lesson: A</h3>
-                    <img src="img/duck.jpg" class="img-responsive" alt="">
+                    <img src="img/animal/lion.png" class="img-responsive" alt="">
                     <div class="caption">
 
                         <p>Created By:</p>
@@ -53,7 +53,7 @@
                 <div class="col-sm-6 col-md-3">
                     <div class="thumbnail">
                         <h3>Lesson: B</h3>
-                        <img src="img/duck.jpg" class="img-responsive" alt="">
+                        <img src="img/animal/tiger.png" class="img-responsive" alt="">
                         <div class="caption">
 
                             <p>Created By:</p>
@@ -73,7 +73,7 @@
                     <div class="col-sm-6 col-md-3">
                         <div class="thumbnail">
                             <h3>Lesson: C</h3>
-                            <img src="img/duck.jpg" class="img-responsive" alt="">
+                            <img src="img/animal/dog.png" class="img-responsive" alt="">
                             <div class="caption">
 
                                 <p>Created By:</p>
@@ -93,7 +93,7 @@
                         <div class="col-sm-6 col-md-3">
                             <div class="thumbnail">
                                 <h3>Lesson: D</h3>
-                                <img src="img/duck.jpg" class="img-responsive" alt="">
+                                <img src="img/animal/wolf.png" class="img-responsive" alt="">
                                 <div class="caption">
 
                                     <p>Created By:</p>
