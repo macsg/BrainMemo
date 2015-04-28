@@ -7,12 +7,16 @@
                     <br>
                     <br>
                     <div class="text-center">
-                        <img class="img-thumnial text-center" id="blah" src="img/200x200.png" alt="your image" />
+                        <?php echo $this->Html->image('200x200.png', array(
+                        'class' => 'img-thumnial text-center',
+                        'id' => 'blah',
+                        'alt' => 'your image'));?>
                     </div>
                     <br>
                     <div class="form-group">
                         <label for="addpic" class="col-sm-3 control-label text-right">Add picture :</label>
                         <div class="col-sm-6">
+                            
                             <input type='file' id="imgInp" />
                         </div>
                     </div>
@@ -41,3 +45,17 @@
         </div>
     </div>
 </section>
+<script type="text/javascript">
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#blah').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#imgInp").change(function(){
+            readURL(this);
+        });
+    </script>
