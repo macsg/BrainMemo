@@ -64,6 +64,8 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">USERS <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Your Profile</a></li>
+                            <li class="divider"></li>
                             <li><a href="#">Action 1</a></li>
                             <li><a href="#">Action 2</a></li>
                             <li><a href="#">Action 3</a></li>
