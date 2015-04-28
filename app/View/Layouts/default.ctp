@@ -137,6 +137,7 @@
     echo $this->Html->script('classie.js');
     echo $this->Html->script('cbpAnimatedHeader.js');
     echo $this->Html->script('brainmemo.js');
+    echo $this->Html->script('file-upload.js');
     echo $this->fetch('script');
     ?>
 </body>
