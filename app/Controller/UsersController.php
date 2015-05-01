@@ -15,12 +15,45 @@ class UsersController extends AppController {
  */
 	public $components = array('Paginator');
 
+    public function beforeFilter() {
+        parent::beforeFilter();
+        $this->Auth->allow();
+    }
+
+    public function register() {
+        $this->layout = 'register';
+        if ($this->request->is('post')) {
+            $this->User->create();
+            if ($this->User->save($this->request->data)) {
+                $this->Session->setFlash(__('New user registered'));
+                return $this->redirect(array('action' => 'login'));
+            }
+            $this->Session->setFlash(__('Could not register user'));
+        }
+    }
+
+    public function login() {
+        $this->layout = 'login';
+        if ($this->request->is('post')) {
+            if  ($this->Auth->login()) {
+                return $this->redirect($this->Auth->redirectUrl());
+            }
+            $this->Session->setFlash(__('Incorrect username or password'));
+        }
+    }
+
+    public function logout() {
+        return $this->redirect($this->Auth->logout());
+    }
 /**
  * index method
  *
  * @return void
  */
-
+	public function index() {
+		$this->User->recursive = 0;
+		$this->set('users', $this->Paginator->paginate());
+	}
 
 /**
  * view method
@@ -35,61 +68,6 @@ class UsersController extends AppController {
 		}
 		$options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
 		$this->set('user', $this->User->find('first', $options));
-	}
-
-    public function beforeFilter() {
-        parent::beforeFilter();
-        $this->Auth->allow('login','register');
-    }
-
-    public function register() {
-        $this->layout = 'register';
-
-        if ($this->request->is('post')) {
-            $this->User->create();
-            if ($this->User->save($this->request->data)) {
-                $this->Session->setFlash(__('New user registered'));
-                return $this->redirect(array('action' => 'login'));
-            }
-            $this->Session->setFlash(__('Could not register user'));
-        }
-    }
-
-    public function login() {
-        $this->layout = 'login';
-
-        if ($this->Session->check('Auth.User')) {
-            $this->redirect(array('controller' => 'home'));
-        }
-
-        if ($this->request->is('post')) {
-            if  ($this->Auth->login()) {
-                return $this->redirect($this->Auth->redirectUrl());
-            } else {
-                $this->Session->setFlash(__('Invalid username or password, try again'));
-            }
-        }
-    }
-
-    public function logout() {
-        return $this->redirect($this->Auth->logout());
-    }
-
-/**
- * add method
- *
- * @return void
- */
-	public function add() {
-		if ($this->request->is('post')) {
-			$this->User->create();
-			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash(__('The user has been saved.'));
-				return $this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('The user could not be saved. Please, try again.'));
-			}
-		}
 	}
 
 /**

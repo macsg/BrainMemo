@@ -12,17 +12,19 @@ class UserFixture extends CakeTestFixture {
  */
 	public $fields = array(
 		'id' => array('type' => 'integer', 'null' => false, 'default' => null, 'length' => 5, 'unsigned' => false, 'key' => 'primary'),
-		'username' => array('type' => 'string', 'null' => false, 'default' => null, 'length' => 20, 'collate' => 'utf8_unicode_ci', 'charset' => 'utf8'),
+		'username' => array('type' => 'string', 'null' => false, 'default' => null, 'length' => 20, 'key' => 'unique', 'collate' => 'utf8_unicode_ci', 'charset' => 'utf8'),
 		'firstname' => array('type' => 'string', 'null' => false, 'default' => null, 'length' => 50, 'collate' => 'utf8_unicode_ci', 'charset' => 'utf8'),
 		'lastname' => array('type' => 'string', 'null' => false, 'default' => null, 'length' => 50, 'collate' => 'utf8_unicode_ci', 'charset' => 'utf8'),
-		'email' => array('type' => 'string', 'null' => false, 'default' => null, 'length' => 62, 'collate' => 'utf8_unicode_ci', 'charset' => 'utf8'),
+		'email' => array('type' => 'string', 'null' => false, 'default' => null, 'length' => 62, 'key' => 'unique', 'collate' => 'utf8_unicode_ci', 'charset' => 'utf8'),
 		'password' => array('type' => 'string', 'null' => false, 'default' => null, 'length' => 128, 'collate' => 'utf8_unicode_ci', 'charset' => 'utf8'),
 		'role' => array('type' => 'string', 'null' => false, 'default' => '2', 'length' => 2, 'collate' => 'utf8_unicode_ci', 'charset' => 'utf8'),
 		'status' => array('type' => 'string', 'null' => false, 'default' => '1', 'length' => 2, 'collate' => 'utf8_unicode_ci', 'charset' => 'utf8'),
 		'created' => array('type' => 'datetime', 'null' => false, 'default' => null),
 		'modified' => array('type' => 'datetime', 'null' => false, 'default' => null),
 		'indexes' => array(
-			'PRIMARY' => array('column' => 'id', 'unique' => 1)
+			'PRIMARY' => array('column' => 'id', 'unique' => 1),
+			'username' => array('column' => 'username', 'unique' => 1),
+			'email' => array('column' => 'email', 'unique' => 1)
 		),
 		'tableParameters' => array('charset' => 'utf8', 'collate' => 'utf8_unicode_ci', 'engine' => 'InnoDB')
 	);
@@ -42,8 +44,8 @@ class UserFixture extends CakeTestFixture {
 			'password' => 'Lorem ipsum dolor sit amet',
 			'role' => '',
 			'status' => '',
-			'created' => '2015-04-27 07:59:22',
-			'modified' => '2015-04-27 07:59:22'
+			'created' => '2015-05-01 04:23:32',
+			'modified' => '2015-05-01 04:23:32'
 		),
 	);
 

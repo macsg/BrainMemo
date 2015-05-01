@@ -15,6 +15,12 @@ class DeckTagTest extends CakeTestCase {
 	public $fixtures = array(
 		'app.deck_tag',
 		'app.deck',
+		'app.user',
+		'app.score',
+		'app.user_badge',
+		'app.badge',
+		'app.category',
+		'app.card',
 		'app.tag'
 	);
 

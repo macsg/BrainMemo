@@ -34,8 +34,8 @@ class BadgeFixture extends CakeTestFixture {
 			'name' => 'Lorem ipsum dolor ',
 			'thumbnail' => 'Lorem ip',
 			'detail' => 'Lorem ipsum dolor sit amet',
-			'created' => '2015-04-27 07:59:22',
-			'modified' => '2015-04-27 07:59:22'
+			'created' => '2015-05-01 04:22:56',
+			'modified' => '2015-05-01 04:22:56'
 		),
 	);
 

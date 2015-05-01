@@ -30,8 +30,8 @@ class CategoryFixture extends CakeTestFixture {
 		array(
 			'id' => 1,
 			'name' => 'Lorem ipsum dolor sit amet',
-			'created' => '2015-04-27 07:59:22',
-			'modified' => '2015-04-27 07:59:22'
+			'created' => '2015-05-01 04:23:05',
+			'modified' => '2015-05-01 04:23:05'
 		),
 	);
 

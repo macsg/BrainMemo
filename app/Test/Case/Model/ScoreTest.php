@@ -19,7 +19,9 @@ class ScoreTest extends CakeTestCase {
 		'app.category',
 		'app.card',
 		'app.deck_tag',
-		'app.tag'
+		'app.tag',
+		'app.user_badge',
+		'app.badge'
 	);
 
 /**

@@ -14,7 +14,14 @@ class CategoryTest extends CakeTestCase {
  */
 	public $fixtures = array(
 		'app.category',
-		'app.deck'
+		'app.deck',
+		'app.user',
+		'app.score',
+		'app.user_badge',
+		'app.badge',
+		'app.card',
+		'app.deck_tag',
+		'app.tag'
 	);
 
 /**

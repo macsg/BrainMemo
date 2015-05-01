@@ -14,7 +14,14 @@ class CardTest extends CakeTestCase {
  */
 	public $fixtures = array(
 		'app.card',
-		'app.deck'
+		'app.deck',
+		'app.user',
+		'app.score',
+		'app.user_badge',
+		'app.badge',
+		'app.category',
+		'app.deck_tag',
+		'app.tag'
 	);
 
 /**
