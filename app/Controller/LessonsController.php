@@ -1,6 +1,6 @@
 <?php
 
-class LessonController extends AppController {
+class LessonsController extends AppController {
     public function index() {
 
     }
