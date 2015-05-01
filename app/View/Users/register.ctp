@@ -25,7 +25,7 @@
                 <div class="form-group">
                     <label for="password" class="col-md-3 control-label">Password</label>
                     <div class="col-md-9">
-                        <input type="password" class="form-control" name="password" placeholder="Password">
+                        <input type="password" id="password" class="form-control" name="password" placeholder="Password">
                     </div>
                 </div>
 
@@ -53,7 +53,7 @@
                 <div class="form-group">
                     <label for="email" class="col-md-3 control-label">E-mail</label>
                     <div class="col-md-9">
-                        <input type="text" class="form-control" name="email" placeholder="Email Address">
+                        <input type="email" class="form-control" name="email" placeholder="Email Address">
                     </div>
                 </div>
                 
@@ -61,13 +61,55 @@
                     <!-- Button -->
                     <div class="col-md-offset-3 col-md-9">
                         <?php echo $this->Form->button('Sign Up', array(
-                            'class' => 'btn btn-info',
+                            'class' => 'btn btn-success',
                             'type' => 'submit'));
                         ?>
                     </div>
                 </div>
-
-            </form>
         </div>
     </div>
 </div>
+<script>
+    $("#UserRegisterForm").validate({
+        rules: {
+            username: {
+                required: true,
+                minlength: 4
+
+            },
+            password: {
+                required: true,
+                minlength: 6
+            },
+            confirmpassword: {
+                required: true,
+                minlength: 6,
+                equalTo: "#password"
+            },
+            firstname: "required",
+            lastname: "required",
+            email: {
+                required: true,
+                email: true
+            }
+        },
+        messages: {
+            username: {
+                required: "Please enter a username",
+                minlength: "Your username must contain of at least 4 characters"
+            },
+            password: {
+                required: "Please provide a password",
+                minlength: 'Your password must be at least 6 characters long'
+            },
+            confirmpassword: {
+                required: "Please provide a password",
+                minlength: 'Your password must be at least 6 characters long',
+                equalTo: 'Please enter the same password as above'
+            },
+            firstname: 'Please enter a firstname',
+            lastname: 'Please enter a lastname',
+            email: "Please enter an email"
+        }
+    });
+</script>

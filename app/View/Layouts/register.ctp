@@ -13,6 +13,7 @@
     echo $this->Html->css('register.css');
     echo $this->Html->script('jquery-2.1.3.min.js');
     echo $this->Html->script('bootstrap.min.js');
+    echo $this->Html->script('jquery.validate.min.js');
     echo $this->fetch('meta');
     echo $this->fetch('css');
     echo $this->fetch('script');

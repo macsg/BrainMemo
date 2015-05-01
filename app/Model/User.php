@@ -58,7 +58,7 @@ class User extends AppModel {
 		),
 		'password' => array(
 			'notEmpty' => array(
-				'rule' => array('notEmpty'),
+				'rule' => array('minLength', 8),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,
