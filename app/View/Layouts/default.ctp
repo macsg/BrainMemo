@@ -54,7 +54,7 @@
                     </form>
                     <li class="page-scroll">
                         <?php
-                        echo $this->Html->link('Lessons', array('controller' => 'lesson'));
+                        echo $this->Html->link('Lessons', array('controller' => 'lessons'));
                         ?>
                         <!-- <a href="lessons.html">Lessons</a> -->
                     </li>
