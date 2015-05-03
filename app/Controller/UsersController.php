@@ -24,6 +24,7 @@ class UsersController extends AppController {
         $this->layout = 'register';
         if ($this->request->is('post')) {
             $this->User->create();
+            pr($this->request->data);
             if ($this->User->save($this->request->data)) {
                 $this->Session->setFlash(__('New user registered'));
                 return $this->redirect(array('action' => 'login'));
@@ -34,6 +35,7 @@ class UsersController extends AppController {
 
     public function login() {
         $this->layout = 'login';
+
         if ($this->request->is('post')) {
             if  ($this->Auth->login()) {
                 return $this->redirect($this->Auth->redirectUrl());

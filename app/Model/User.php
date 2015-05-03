@@ -18,8 +18,8 @@ class User extends AppModel {
 	public $validate = array(
 		'username' => array(
 			'notEmpty' => array(
-				'rule' => array('notEmpty'),
-				//'message' => 'Your custom message here',
+                'rule' => array('minLength', 4),
+				'message' => 'Your username must contain of at least 4 characters',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -58,34 +58,14 @@ class User extends AppModel {
 		),
 		'password' => array(
 			'notEmpty' => array(
-				'rule' => array('minLength', 8),
-				//'message' => 'Your custom message here',
+				'rule' => array('minLength', 6),
+				'message' => 'Your password must have 6 characters',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
-		),
-		'role' => array(
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'status' => array(
-			'notEmpty' => array(
-				'rule' => array('notEmpty'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
+		)
 	);
 
     public function beforeSave($options = array()) {

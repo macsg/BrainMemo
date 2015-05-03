@@ -12,9 +12,11 @@
         echo $this->Html->css('bootstrap/bootstrap.min.css');
         echo $this->Html->css('font-awesome/font-awesome.min.css');
         echo $this->Html->css('style.css');
+        echo $this->Html->css('profile.css');
+        echo $this->Html->css('owl-carousel/owl.carousel.css');
+        echo $this->Html->css('owl-carousel/owl.theme.css');
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
-
 	?>
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 </head>
@@ -62,9 +64,16 @@
                         <?php echo $this->Html->link('Create', array('controller' => 'create'));?>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">USERS <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Welcome, <span style="color: cyan"><?php echo $this->Session->read('Auth.User.username');?></span> <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Your Profile</a></li>
+                            <li>
+                                <?php echo $this->Html->link(array(
+                                    'controller' => 'users',
+                                    'action' => 'view',
+                                    $this->Session->read('Auth.User.id')
+
+                                ));
+                                ?>Profile</a></li>
                             <li class="divider"></li>
                             <li><a href="#">Action 1</a></li>
                             <li><a href="#">Action 2</a></li>
@@ -72,13 +81,12 @@
                             <li class="divider"></li>
                             <li><?php echo $this->Html->link('LOGOUT', array(
                                     'controller' => 'users',
-                                    'action' => 'logout'));?></li>
+                                    'action' => 'logout'
+                                ));?></li>
                         </ul>
                     </li>
-
                 </ul>
             </div>
-
         </div>
     </nav>
 	<div id="container">
@@ -138,6 +146,8 @@
     echo $this->Html->script('cbpAnimatedHeader.js');
     echo $this->Html->script('brainmemo.js');
     echo $this->Html->script('file-upload.js');
+    echo $this->Html->script('owl-carousel/owl.carousel.min.js');
+    echo $this->Html->script('learn.js');
     echo $this->fetch('script');
     ?>
 </body>
