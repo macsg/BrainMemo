@@ -67,13 +67,12 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Welcome, <span style="color: cyan"><?php echo $this->Session->read('Auth.User.username');?></span> <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li>
-                                <?php echo $this->Html->link(array(
+                                <?php echo $this->Html->link('Profile',array(
                                     'controller' => 'users',
                                     'action' => 'view',
                                     $this->Session->read('Auth.User.id')
-
                                 ));
-                                ?>Profile</a></li>
+                                ?></li>
                             <li class="divider"></li>
                             <li><a href="#">Action 1</a></li>
                             <li><a href="#">Action 2</a></li>
