@@ -19,7 +19,7 @@
                     <a class="list-group-item active">Categories</a>
                     <?php foreach ($categorys as $category_show): 
                          echo $this->Html->link($category_show['Category']['name'], 
-                            ['controller' => 'lessons','action' => 'index',$category_show['Category']['name']]
+                            ['controller' => 'lessons','action' => 'index',$category_show['Category']['id']]
                             , array('class' => 'list-group-item'));
                     ?>
                     <?php endforeach; ?>
@@ -41,10 +41,9 @@
                                 <p>High Scores:</p>
                                 <div class="span7 text-center">
                                     <a href="#" class="btn btn-default" role="button"><i class="glyphicon glyphicon-star-empty"></i></a> 
-                                    <?php echo $this->Html->link('Learn', 
-                                        ['controller' => 'lessons',
-                                        'action' => 'learn'], array(
-                                        'class' => 'btn btn-default'));?>
+                    <?php echo $this->Html->link('Learn', 
+                    ['controller' => 'lessons','action' => 'learn',$decks_show['Deck']['id']],
+                     array('class' => 'btn btn-default'));?>
                                     
                                 </div>
                             </div>

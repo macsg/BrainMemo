@@ -4,11 +4,13 @@
         <h1 class="text-center"> Lesson Name </h1>
         <br><br>
         <div id="owl-demo" class="owl-carousel owl-theme">
-            <div class="item"><?php echo $this->Html->image('fruit/apple.png', array(
+            <?php foreach ($cards as $card_show): ?>
+            <div class="item"><?php echo $this->Html->image($card_show['Card']['front'], array(
                     'class' => 'img-responsive center-block'
                 )); ?>
             </div>
-            <div class="item"><img src="assets/fullimage2.jpg" alt="GTA V"></div>
+            <?php endforeach; ?>
+            <!--<div class="item"><img src="assets/fullimage2.jpg" alt="GTA V"></div>-->
         </div>
 
         <br><br>
