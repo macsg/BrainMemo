@@ -70,7 +70,7 @@
     </div>
 </div>
 <script>
-    $("#UserRegisterForm").validate({
+    $("#UserEditForm").validate({
         rules: {
             username: {
                 required: true,

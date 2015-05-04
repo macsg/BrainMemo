@@ -9,7 +9,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-3 col-lg-3 " align="center">
-                            <img alt="User Pic" src="" class="img-circle">
+                            <?php echo $this->Html->image(h($user['User']['img']), array('style' => 'width:100px')); ?>
                         </div>
                         <div class=" col-md-9 col-lg-9 ">
                             <table class="table table-user-information">
@@ -37,7 +37,16 @@
                 </div>
                 <div class="panel-footer">
                     <span class="pull-left"></span>
-                    <a href="edit.html" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
+                    <?php echo $this->Html->link('<i class="glyphicon glyphicon-edit"></i>', array(
+                        'controller' => 'users',
+                        'action' => 'edit',
+                        $this->Session->read('Auth.User.id')), array(
+                        'data-original-title' => 'Edit this user',
+                        'data-toggle' => 'tooltip',
+                        'type' => 'button',
+                        'class' => 'btn btn-sm btn-warning',
+                        'escape' => false
+                    ));?>
                 </div>
             </div>
         </div>

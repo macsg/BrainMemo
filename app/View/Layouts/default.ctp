@@ -20,7 +20,7 @@
 	?>
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 </head>
-<body id="page-top" class="index">
+<body id="page-top" class="index" style="background-color: #d3d3d3">
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <!-- mobile display -->
@@ -48,12 +48,7 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    <form class="navbar-form navbar-left" role="search">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search">
-                            <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                        </div>
-                    </form>
+
                     <li class="page-scroll">
                         <?php
                         echo $this->Html->link('Lessons', array('controller' => 'lessons', 'action' => 'index'));
@@ -74,9 +69,7 @@
                                 ));
                                 ?></li>
                             <li class="divider"></li>
-                            <li><a href="#">Action 1</a></li>
-                            <li><a href="#">Action 2</a></li>
-                            <li><a href="#">Action 3</a></li>
+                            <li><?php echo $this->Html->link('Edit Profile', array('controller' => 'users', 'action' => 'edit', $this->Session->read('Auth.User.id')));?></li>
                             <li class="divider"></li>
                             <li><?php echo $this->Html->link('LOGOUT', array(
                                     'controller' => 'users',
@@ -144,9 +137,9 @@
     echo $this->Html->script('classie.js');
     echo $this->Html->script('cbpAnimatedHeader.js');
     echo $this->Html->script('brainmemo.js');
-    echo $this->Html->script('file-upload.js');
     echo $this->Html->script('owl-carousel/owl.carousel.min.js');
     echo $this->Html->script('learn.js');
+    echo $this->Html->script('jquery.validate.min.js');
     echo $this->fetch('script');
     ?>
 </body>
