@@ -550,3 +550,7 @@ CSS for Sidebar (optional)
 div#fugo{
     float:right
 }
+
+#usertable{
+    background-color: white;
+}
