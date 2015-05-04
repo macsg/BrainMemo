@@ -7,7 +7,7 @@ class AdminsController extends AppController {
             $this->set('User', $User);
     }
 
-    public function usermanage(){
+    public function manageuser(){
         $this->layout = 'admin';
         $User = $this->Session->read('User');
         $this->set('User', $User);
@@ -18,7 +18,20 @@ class AdminsController extends AppController {
         pr($this->request->User);  
         $this->set('users', $users);
     }
-    public function lessonmanage(){
+
+    public function managecategory(){
+        $this->layout = 'admin';
+        $User = $this->Session->read('User');
+        $this->set('User', $User);
+        $this->loadModel('User');
+        $users = $this->User->find('all', array(
+            'conditions' => array('User.role' => '2')
+        ));
+        pr($this->request->User);  
+        $this->set('users', $users);
+    }
+    
+    public function managelesson(){
         $this->layout = 'admin';
         $User = $this->Session->read('User');
         $this->set('User', $User);

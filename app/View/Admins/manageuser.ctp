@@ -3,7 +3,7 @@
 
     <div class="row">
         <div class="col-lg-12 text-center">
-            <h1>USER MANAGE</h1>
+            <h1>USER MANAGEMENT</h1>
             <hr class="seperate">
             <div class = "container" id="usertable">
                 <table class="table-striped table-bordered table-striped" style="width:100%" >
@@ -58,6 +58,7 @@
 
             </div>
             <hr class="seperate">
+            <?php echo $this->Html->link('Back to main page', array('controller' => 'admins', 'action' => 'index'));?></div>   
         </div>
     </div>
 </div>

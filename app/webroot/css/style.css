@@ -439,6 +439,10 @@ footer .footer-below {
     opacity: 0;
 }
 
+/*ADMINISTRATOR*/
+#usertable{
+    background-color: white;
+}
 
 .admin-userbutton {
     display:inline-block;
@@ -447,8 +451,27 @@ footer .footer-below {
     background:url('../img/adminbutton/usermanage-hold.png') no-repeat;
 }
 
-.admin-userbutton:hover {
+.admin-userbutton:active {
     background:url('../img/adminbutton/usermanage-active.png') no-repeat;
+}
+
+.admin-userbutton:hover {
+    background:url('../img/adminbutton/usermanage-hover.png') no-repeat;
+}
+
+.admin-categorybutton {
+    display:inline-block;
+    width:300px;
+    height:150px;
+    background:url('../img/adminbutton/categorymanage-hold.png') no-repeat;
+}
+
+.admin-categorybutton:active {
+    background:url('../img/adminbutton/categorymanage-active.png') no-repeat;
+}
+
+.admin-categorybutton:hover {
+    background:url('../img/adminbutton/categorymanage-hover.png') no-repeat;
 }
 
 .admin-lessonbutton {
@@ -458,19 +481,12 @@ footer .footer-below {
     background:url('../img/adminbutton/lessonmanage-hold.png') no-repeat;
 }
 
-.admin-lessonbutton:hover {
+.admin-lessonbutton:active {
     background:url('../img/adminbutton/lessonmanage-active.png') no-repeat;
 }
 
-.admin-badgesbutton {
-    display:inline-block;
-    width:300px;
-    height:150px;
-    background:url('../img/adminbutton/usermanage-hold.png') no-repeat;
-}
-
-.admin-badgesbutton:hover {
-    background:url('../img/adminbutton/usermanage-active.png') no-repeat;
+.admin-lessonbutton:hover {
+    background:url('../img/adminbutton/lessonmanage-hover.png') no-repeat;
 }
 
 
@@ -553,8 +569,4 @@ CSS for Sidebar (optional)
 ---------------------------------------- */
 div#fugo{
     float:right
-}
-
-#usertable{
-    background-color: white;
 }
