@@ -6,6 +6,7 @@ App::uses('AppModel', 'Model');
  * @property Deck $Deck
  */
 class Category extends AppModel {
+	public $name = 'Category';
 
 /**
  * Validation rules
@@ -47,5 +48,9 @@ class Category extends AppModel {
 			'counterQuery' => ''
 		)
 	);
+
+	public function getCategory(){
+		return $this->find('list', array('fields'=>array('Category.id','Category.name')));
+	}
 
 }

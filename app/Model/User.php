@@ -9,6 +9,7 @@ App::uses('BlowfishPasswordHasher', 'Controller/Component/Auth');
  * @property UserBadge $UserBadge
  */
 class User extends AppModel {
+	public $name = 'User';
 
 /**
  * Validation rules

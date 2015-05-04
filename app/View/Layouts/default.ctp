@@ -57,7 +57,9 @@
                         <!-- <a href="lessons.html">Lessons</a> -->
                     </li>
                     <li class="page-scroll">
-                        <?php echo $this->Html->link('Create', array('controller' => 'create'));?>
+                        <?php echo $this->Html->link('Create', array(
+                        'controller' => 'decks',
+                        'action' => 'add'));?>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Welcome, <span style="color: cyan"><?php echo $this->Session->read('Auth.User.firstname');?></span> <span class="caret"></span></a>
