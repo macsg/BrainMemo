@@ -1,9 +1,7 @@
 
-
 <div class="decks form" style="margin-top:3em;text-align:center">
 	<?php echo $this->Form->create('Deck',array(
 		'enctype' => 'multipart/form-data',
-
 		'url' => [
 		'controller' => 'decks',
 		'action' => 'add'
@@ -70,64 +68,133 @@
 
 							$options = array();
 							foreach ($categorys as $categorys):
-				$options[$categorys['Category']['id']] = $categorys['Category']['name'];
+								$options[$categorys['Category']['id']] = $categorys['Category']['name'];
 							endforeach;?>
 
-									<?php echo $this->Form->input('select',[
-										'label' => false,
-										'options' => $options,
-										'class' => 'form-control',
-										'aria-describedby' => 'basic-addon1'
-										]); ?>
+							<?php echo $this->Form->input('select',[
+								'label' => false,
+								'options' => $options,
+								'class' => 'form-control',
+								'aria-describedby' => 'basic-addon1'
+								]); ?>
 
-
-
-								</div>
-								<div class="col-sm-6"></div>
 
 							</div>
-
-
-
-
-
-							<br><br>
-							<?php echo $this->Form->end(__('Submit')); ?>
-
-
-
-
-
-
-
+							<div class="col-sm-6"></div>
 
 						</div>
 
+						<br><br>
+
+
+						<?php echo $this->Form->create('Cards',array(
+							'enctype' => 'multipart/form-data',
+
+							'url' => [
+							'controller' => 'cards',
+							'action' => 'add'
+							]
+
+							)); ?>
+							<br><br>
+
+							<div class="row">
+								<div class="col-sm-6 col-md-6 col-md-offset-3 column" >
+
+									<?php echo $this->Form->button('add card',[
+										'label' => false,
+										'class' => 'btn btn default',
+										'type' => 'button',
+										'onclick' => 'cardform()',
+										'id' => 'addbutton'
+
+										]); ?>
+
+									</div>
+									<div class="col-sm-6"></div>
+
+								</div>
+
+								<!-- card form -->
+								<div class="row">
+									<div class="col-sm-6 col-md-6 col-md-offset-5">
+										<div class="hidden" id="main">
+											<div id="form_sample"></div>
+										</div>
+										<div class="col-sm-6 col-md-6"></div>
+
+									</div>
 
 
 
-						<script>
-						function cardform(){
+									<div class="row">
+										<div class="col-sm-6 col-md-6 col-md-offset-3 column" >
+											<?php echo $this->Form->end('Submit',[
+												'label' => false,
+												'class' => 'btn btn default']); ?>
 
-							alert('aaaaaa');
-						}
 
-						</script>
+											</div>
+											<div class="col-sm-6"></div>
 
-		<!-- <div class="actions">
-			<h3><?php //echo __('Actions'); ?></h3>
-			<ul>
+										</div>
 
-				<li><?php //echo $this->Html->link(__('List Decks'), array('action' => 'index')); ?></li>
-				<li><?php //echo $this->Html->link(__('List Users'), array('controller' => 'users', 'action' => 'index')); ?> </li>
-				<li><?php //echo $this->Html->link(__('New User'), array('controller' => 'users', 'action' => 'add')); ?> </li>
-				<li><?php //echo $this->Html->link(__('List Categories'), array('controller' => 'categories', 'action' => 'index')); ?> </li>
-				<li><?php //echo $this->Html->link(__('New Category'), array('controller' => 'categories', 'action' => 'add')); ?> </li>
-				<li><?php //echo $this->Html->link(__('List Cards'), array('controller' => 'cards', 'action' => 'index')); ?> </li>
-				<li><?php //echo $this->Html->link(__('New Card'), array('controller' => 'cards', 'action' => 'add')); ?> </li>
-				<li><?php //echo $this->Html->link(__('List Deck Tags'), array('controller' => 'deck_tags', 'action' => 'index')); ?> </li>
-				<li><?php //echo $this->Html->link(__('New Deck Tag'), array('controller' => 'deck_tags', 'action' => 'add')); ?> </li>
-				<li><?php //echo $this->Html->link(__('List Scores'), array('controller' => 'scores', 'action' => 'index')); ?> </li>
-				<li><?php //echo $this->Html->link(__('New Score'), array('controller' => 'scores', 'action' => 'add')); ?> </li>
-			</ul>
-		</div> -->
+
+<script>
+function cardform(){
+alert('Add card number....');
+
+// Fetching HTML Elements in Variables by ID.
+var x = document.getElementById("form_sample");
+var createform = document.createElement('form'); // Create New Element Form
+createform.setAttribute("action", ""); // Setting Action Attribute on Form
+createform.setAttribute("method", "post"); // Setting Method Attribute on Form
+x.appendChild(createform);
+
+var heading = document.createElement('h2'); // Heading of Form
+heading.innerHTML = "Adding Cards ";
+createform.appendChild(heading);
+
+var line = document.createElement('hr'); // Giving Horizontal Row After Heading
+createform.appendChild(line);
+
+var linebreak = document.createElement('br');
+createform.appendChild(linebreak);
+
+var namelabel = document.createElement('label'); // Create Label for Name Field
+namelabel.innerHTML = "Your Image : "; // Set Field Labels
+createform.appendChild(namelabel);
+
+var inputelement = document.createElement('input'); // Create Input Field for Name
+inputelement.setAttribute("type", "file");
+inputelement.setAttribute("name", "dname");
+createform.appendChild(inputelement);
+
+var linebreak = document.createElement('br');
+createform.appendChild(linebreak);
+
+var emaillabel = document.createElement('label'); // Create Label for E-mail Field
+emaillabel.innerHTML = "Your Answer : ";
+createform.appendChild(emaillabel);
+
+var emailelement = document.createElement('input'); // Create Input Field for E-mail
+emailelement.setAttribute("type", "text");
+emailelement.setAttribute("name", "demail");
+createform.appendChild(emailelement);
+
+var emailbreak = document.createElement('br');
+createform.appendChild(emailbreak);
+
+
+
+var submitelement = document.createElement('input'); // Append Submit Button
+submitelement.setAttribute("type", "button");
+submitelement.setAttribute("name", "dsubmit");
+submitelement.setAttribute("value", "Add more Card");
+submitelement.setAttribute("onclick","cardform()");
+createform.appendChild(submitelement);
+
+var disable = document.getElementById("addbutton");
+disable.setVisible(false);
+}
+</script>
