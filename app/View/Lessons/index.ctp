@@ -30,10 +30,10 @@
                 <?php foreach ($decks as $decks_show): ?>
                     <div class="col-sm-6 col-md-3">
                         <div class="thumbnail">
-                            <h3>Lesson: <?= $decks_show['Deck']['name'] ?></h3>
+                            <h3><?= $decks_show['Deck']['name'] ?></h3>
                             <?php echo $this->Html->image('duck.jpg', array('class' => 'img-responsive'));?>
                             <div class="caption">
-                                <p>Created By: <?php echo $this->Session->read('Auth.User.username'); ?></p>
+                                <p>Created By: <?= $decks_show['User']['username'] ?></p>
                                 <p>High Scores:</p>
                                 <div class="span7 text-center">
                                     <a href="#" class="btn btn-default" role="button"><i class="glyphicon glyphicon-star-empty"></i></a> <a href="#" class="btn btn-default" role="button">Learn</a> <a href="#" class="btn btn-default" role="button">Play</a>

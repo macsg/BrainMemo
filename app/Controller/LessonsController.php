@@ -13,7 +13,6 @@ class LessonsController extends AppController {
     	$this->loadModel('Deck');
     		$decks = $this->Deck->find('all',['order'=>['Deck.name'=>'ASC']]);
     		$this->set('decks',$decks);
-
     }
 
     public function learn() {
