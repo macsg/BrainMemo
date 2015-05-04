@@ -17,8 +17,11 @@
             <div class="col-xs-2 col-md-2">
                 <div class="list-group">
                     <a class="list-group-item active">Categories</a>
-                    <?php foreach ($categorys as $category_show): ?>
-                        <a href="#" class="list-group-item"><?= $category_show['Category']['name'] ?></a>
+                    <?php foreach ($categorys as $category_show): 
+                         echo $this->Html->link($category_show['Category']['name'], 
+                            ['controller' => 'lessons','action' => 'index',$category_show['Category']['id']]
+                            , array('class' => 'list-group-item'));
+                    ?>
                     <?php endforeach; ?>
                 </div>
             </div>
@@ -28,6 +31,7 @@
                 <div class="row">
 
                 <?php foreach ($decks as $decks_show): ?>
+
                     <div class="col-sm-6 col-md-3">
                         <div class="thumbnail">
                             <h3><?= $decks_show['Deck']['name'] ?></h3>
@@ -36,7 +40,11 @@
                                 <p>Created By: <?= $decks_show['User']['username'] ?></p>
                                 <p>High Scores:</p>
                                 <div class="span7 text-center">
-                                    <a href="#" class="btn btn-default" role="button"><i class="glyphicon glyphicon-star-empty"></i></a> <a href="#" class="btn btn-default" role="button">Learn</a> <a href="#" class="btn btn-default" role="button">Play</a>
+                                    <a href="#" class="btn btn-default" role="button"><i class="glyphicon glyphicon-star-empty"></i></a> 
+                    <?php echo $this->Html->link('Learn', 
+                    ['controller' => 'lessons','action' => 'learn',$decks_show['Deck']['id']],
+                     array('class' => 'btn btn-default'));?>
+                                    
                                 </div>
                             </div>
                         </div>

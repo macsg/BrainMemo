@@ -46,17 +46,33 @@ class CardsController extends AppController {
  * @return void
  */
 	public function add() {
-		if ($this->request->is('post')) {
-			$this->Card->create();
-			if ($this->Card->save($this->request->data)) {
-				$this->Session->setFlash(__('The card has been saved.'));
-				return $this->redirect(array('action' => 'index'));
+		
+	$this->loadModel('Card');
+	 $this->Card->create();
+	
+	if($this->request->is('POST')){
+           // pr($this->request->data);
+		$data = [
+		'Card' => [
+			'front' =>$this->request->data['Deck']['front'],
+            'back' =>$this->request->data['Deck']['back'],
+			'deck_id' => $this->Deck->getLastInsertId(),
+			'created' => date("Y-m-d H:i:s"),
+			'modified' => date("Y-m-d H:i:s")
+		]];
+
+		//pr($data);
+		if ($this->Card->save($data)) {
+				$this->Session->setFlash('Create Card success','default', 
+				array("class" => 'alert alert-success'));
+				return $this->redirect(array(
+					'controller' => 'lesson',
+					'action' => 'index'));
 			} else {
-				$this->Session->setFlash(__('The card could not be saved. Please, try again.'));
+				$this->Session->setFlash('Create Card fail','default', 
+				array("class" => 'alert alert-danger'));
 			}
 		}
-		$decks = $this->Card->Deck->find('list');
-		$this->set(compact('decks'));
 	}
 
 /**

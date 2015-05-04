@@ -55,6 +55,16 @@ public function add() {
 		]
 		]);
 	$this->set('categorys', $categorys);
+
+
+
+	$this->loadModel('Card');
+	 $this->Card->create();
+	
+	
+	
+
+
 	if($this->request->is('POST')){
            // pr($this->request->data);
 		$data = [
@@ -65,20 +75,62 @@ public function add() {
 		'user_id' => $id,
 		'category_id' => trim($this->request->data['Deck']['select']),
 		'created' => date("Y-m-d H:i:s"),
-		'modified' => date("Y-m-d H:i:s")
-		]];
+		'modified' => date("Y-m-d H:i:s")] 
+
+
+		];
 
 		//pr($data);
 		if ($this->Deck->save($data)) {
-				$this->Session->setFlash('Create lesson success','default', 
-				array("class" => 'alert alert-success'));
-				return $this->redirect(array(
-					'controller' => 'home',
-					'action' => 'index'));
-			} else {
-				$this->Session->setFlash('Create lesson fail','default', 
-				array("class" => 'alert alert-danger'));
-			}
+
+            $count = trim($this->request->data['Card']['hidden']);
+			//$count = 2;
+
+              for($i=1;$i <= $count ;$i++){
+              		$category = $this->request->data['Card']['categories'];
+              		$imgname = $this->request->data['Card']['picture'.$i];
+              		$ans = $this->request->data['Card']['ans'.$i];
+              		$data1 = [
+              		'Card' => [
+						'front' => $category."/".$imgname['name'] ,
+            			'back' => $ans ,
+						'deck_id' => $this->Deck->getLastInsertId(),
+						'created' => date("Y-m-d H:i:s"),
+						'modified' => date("Y-m-d H:i:s")]];
+
+						//pr($data1);	
+					if ($this->Card->saveAssociated($data1)) {
+						move_uploaded_file($imgname['tmp_name'], WWW_ROOT . "/img/".$category."/".$i.".png");
+					}
+              } 
+              
+
+				// $this->Session->setFlash('Create lesson success','default', 
+				// array("class" => 'alert alert-success'));
+				// return $this->redirect(array(
+				// 	'controller' => 'lesson',
+				// 	'action' => 'index'));
+
+
+
+			// } else {
+			// 	$this->Session->setFlash('Create lesson fail','default', 
+			// 	array("class" => 'alert alert-danger'));
+			// }
+
+
+
+			// if ($this->Card->save($data)) {
+			// 	$this->Session->setFlash('Create Card success','default', 
+			// 	array("class" => 'alert alert-success'));
+			// 	return $this->redirect(array(
+			// 		'controller' => 'lesson',
+			// 		'action' => 'index'));
+			// } else {
+			// 	$this->Session->setFlash('Create Card fail','default', 
+			// 	array("class" => 'alert alert-danger'));
+			// }
+		}
 		}
 }
 
@@ -130,3 +182,8 @@ public function delete($id = null) {
 	return $this->redirect(array('action' => 'index'));
 }
 }
+
+
+
+
+ 
