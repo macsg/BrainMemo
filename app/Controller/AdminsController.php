@@ -16,7 +16,7 @@ class AdminsController extends AppController {
             'conditions' => array('User.status' => 1, 'User.role' => '2')
         ));
         pr($this->request->User);  
-        // $this->set('users', $users);
+        $this->set('users', $users);
     }
     
 }

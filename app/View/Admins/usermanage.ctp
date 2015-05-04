@@ -1,5 +1,12 @@
 <div style="margin:150px"></div>
-<h1>User Manage</h1>
+<div class="admin">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h1>USER MANAGE</h1>
+            <hr class="seperate">
+        </div>
+    </div>
+</div>
 <?php echo $User['User']['firstname'] ?> <?php echo $User['User']['lastname'] ?>
 <div class="col-sm-10" >
     <div class="container showcontent_nofixes">
