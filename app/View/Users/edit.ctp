@@ -26,6 +26,7 @@
                                     echo $this->Form->input('email', array(
                                         'class' => 'form-control'
                                     ));
+
                                     echo $this->Form->button('OK', array(
                                         'class' => 'btn btn-success',
                                         'type' => 'submit',
@@ -38,6 +39,7 @@
                                         'style' => 'margin-top:20px; margin-left: 20px;'
                                         ));
                                     ?>
+                                    <input id="input-2" type="file" class="file" multiple="true" data-show-upload="false" data-show-caption="true">
                                 </div>
                             </div>
                         </div>

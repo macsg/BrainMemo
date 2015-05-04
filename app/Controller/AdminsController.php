@@ -2,11 +2,13 @@
 
 class AdminsController extends AppController {
     public function index() {
+            $this->layout = 'admin';
             $User = $this->Session->read('User');
             $this->set('User', $User);
     }
 
     public function usermanage(){
+        $this->layout = 'admin';
         $User = $this->Session->read('User');
         $this->set('User', $User);
         $this->loadModel('User');
