@@ -21,68 +21,68 @@
     <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 </head>
 <body id="page-top" class="index" style="background-color: #d3d3d3">
-   <!--  <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container"> -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
             <!-- mobile display -->
-          <!--   <div class="navbar-header page-scroll">
+            <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                </button> -->
+                </button>
                 <?php 
-                    // echo $this->Html->link('Brain Memo', array(
-                    // 'controller' => 'home'
-                    // ), array(
-                    // 'class' => 'navbar-brand'
-                    // ));
+                    echo $this->Html->link('Brain Memo', array(
+                    'controller' => 'home'
+                    ), array(
+                    'class' => 'navbar-brand'
+                    ));
                 ?>
                 
                 <!-- <a class="navbar-brand" href="index.html">Brain Memo</a> -->
-            <!-- </div> -->
+            </div>
 
             <!-- normal display -->
-            <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
 
-                    <li class="page-scroll"> -->
-                        <?php
-                        // echo $this->Html->link('Lessons', array('controller' => 'lessons', 'action' => 'index'));
-                        ?>
-                        <!-- <a href="lessons.html">Lessons</a> -->
-                    <!-- </li>
                     <li class="page-scroll">
-                        <?php //echo $this->Html->link('Create', array(
-                        //'controller' => 'decks',
-                       // 'action' => 'add'));?>
+                        <?php
+                         echo $this->Html->link('Lessons', array('controller' => 'lessons', 'action' => 'index'));
+                        ?>
+                       <!--  <a href="lessons.html">Lessons</a> -->
+                    </li>
+                    <li class="page-scroll">
+                        <?php echo $this->Html->link('Create', array(
+                        'controller' => 'decks',
+                       'action' => 'add'));?>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Welcome, <span style="color: cyan"><?php// echo// $this->Session->read('Auth.User.firstname');?></span> <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Welcome, <span style="color: cyan"><?php echo $this->Session->read('Auth.User.firstname');?></span> <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li>
-                                <?php// echo //$this->Html->link('Profile',array(
-                                   // 'controller' => 'users',
-                                   // 'action' => 'view',
-                                    //$this->Session->read('Auth.User.id')
+                                <?php echo $this->Html->link('Profile',array(
+                                    'controller' => 'users',
+                                    'action' => 'view',
+                                    $this->Session->read('Auth.User.id')
                                 ));
                                 ?></li>
                             <li class="divider"></li>
-                            <li><?php //echo $this->Html->link('Edit Profile', array('controller' => 'users', 'action' => 'edit', $this->Session->read('Auth.User.id')));?></li>
+                            <li><?php echo $this->Html->link('Edit Profile', array('controller' => 'users', 'action' => 'edit', $this->Session->read('Auth.User.id')));?></li>
                             <li class="divider"></li>
-                            <li><?php //echo $this->Html->link('LOGOUT', array(
-                                    //'controller' => 'users',
-                                    //'action' => 'logout'
-                                //));?></li>
+                            <li><?php echo $this->Html->link('LOGOUT', array(
+                                    'controller' => 'users',
+                                    'action' => 'logout'
+                                ));?></li>
                         </ul>
                     </li>
                 </ul>
             </div>
         </div>
-    </nav> -->
+    </nav> 
 	<div id="container">
 		<div id="content">
 			<?php echo $this->Session->flash(); ?>
