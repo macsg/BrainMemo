@@ -118,7 +118,7 @@
 								<!-- card form -->
 								<div class="row">
 									<div class="col-sm-6 col-md-6 col-md-offset-5">
-										<div class="hidden" id="main">
+										<div id="main">
 											<div id="form_sample"></div>
 										</div>
 										<div class="col-sm-6 col-md-6"></div>
