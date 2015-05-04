@@ -24,8 +24,6 @@
       echo $this->Html->link('',array('controller' => 'admins', 'action' => 'usermanage'),array('class' => 'admin-userbutton'));
       echo '<span> </span>';
       echo $this->Html->link('',array('controller' => 'admins', 'action' => 'lessonmanage'),array('class' => 'admin-lessonbutton'));
-      echo '<span> </span>';
-      echo $this->Html->link('',array('controller' => 'admins', 'action' => 'badgesmanage'),array('class' => 'admin-badgesbutton'));            
             ?>
         </div>
     </div>
