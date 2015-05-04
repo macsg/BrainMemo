@@ -10,6 +10,8 @@ App::uses('AppModel', 'Model');
  * @property Score $Score
  */
 class Deck extends AppModel {
+	public $name = 'Deck';
+
 
 /**
  * Validation rules
