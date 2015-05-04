@@ -24,8 +24,22 @@ class UsersController extends AppController {
         $this->layout = 'register';
         if ($this->request->is('post')) {
             $this->User->create();
-            pr($this->request->data);
-            if ($this->User->save($this->request->data)) {
+            $data = [
+                'User' => [
+                    'username' => trim($this->request->data['User']['username']),
+                    'firstname' => trim($this->request->data['User']['firstname']),
+                    'lastname' => trim($this->request->data['User']['lastname']),
+                    'email' => trim($this->request->data['User']['email']),
+                    'password' => trim($this->request->data['User']['password']),
+                    'role' => '2',
+                    'status' => '1',
+                    'created' => date("Y-m-d H:i:s"),
+                    'modified' => date("Y-m-d H:i:s"),
+                    'img' => 'profile/avatar.jpg'
+                ]
+            ];
+            pr($data);
+            if ($this->User->save($data)) {
                 $this->Session->setFlash(__('New user registered'));
                 return $this->redirect(array('action' => 'login'));
             }
@@ -38,7 +52,14 @@ class UsersController extends AppController {
 
         if ($this->request->is('post')) {
             if  ($this->Auth->login()) {
-                return $this->redirect($this->Auth->redirectUrl());
+                if ($this->Auth->user('role') == 1) {
+                    $this->redirect(array(
+                        'controller' => 'admins',
+                        'action' => 'index'
+                    ));
+                } else {
+                    return $this->redirect($this->Auth->redirectUrl());
+                }
             }
             $this->Session->setFlash(__('Incorrect username or password'));
         }
@@ -94,7 +115,7 @@ class UsersController extends AppController {
             );
         } else {
             $this->request->data = $this->User->read(null, $id);
-            unset($this->request->data['User']['password']);
+
         }
     }
 

@@ -59,7 +59,7 @@
                         <?php echo $this->Html->link('Create', array('controller' => 'create'));?>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Welcome, <span style="color: cyan"><?php echo $this->Session->read('Auth.User.username');?></span> <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Welcome, <span style="color: cyan"><?php echo $this->Session->read('Auth.User.firstname');?></span> <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li>
                                 <?php echo $this->Html->link('Profile',array(

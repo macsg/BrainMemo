@@ -40,7 +40,8 @@ class AppController extends Controller {
             ),
             'logoutRedirect' => array(
                 'controller' => 'users',
-                'action' => 'login'
+                'action' => 'login',
+                'admin' => false
             ),
             'authenticate' => array(
                 'Form' => array(
@@ -49,7 +50,7 @@ class AppController extends Controller {
             ),
             'authError' => 'You must be logged in to view this page.',
             'loginError' => 'Invalid Username or Password entered, please try again.'
-        )
+        ),
     );
 
     public function beforeFilter() {

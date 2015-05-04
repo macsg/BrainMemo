@@ -18,14 +18,14 @@
                 <div class="form-group">
                     <label for="username" class="col-md-3 control-label">Username</label>
                     <div class="col-md-9">
-                        <input type="text" class="form-control" name="username" placeholder="Username">
+                        <input type="text" class="form-control" name="User[username]" placeholder="Username">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="password" class="col-md-3 control-label">Password</label>
                     <div class="col-md-9">
-                        <input type="password" id="password" class="form-control" name="password" placeholder="Password">
+                        <input type="password" id="password" class="form-control" name="User[password]" placeholder="Password">
                     </div>
                 </div>
 
@@ -39,21 +39,21 @@
                 <div class="form-group">
                     <label for="firstname" class="col-md-3 control-label">First Name</label>
                     <div class="col-md-9">
-                        <input type="text" class="form-control" name="firstname" placeholder="First Name">
+                        <input type="text" class="form-control" name="User[firstname]" placeholder="First Name">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="lastname" class="col-md-3 control-label">Last Name</label>
                     <div class="col-md-9">
-                        <input type="text" class="form-control" name="lastname" placeholder="Last Name">
+                        <input type="text" class="form-control" name="User[lastname]" placeholder="Last Name">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="email" class="col-md-3 control-label">E-mail</label>
                     <div class="col-md-9">
-                        <input type="email" class="form-control" name="email" placeholder="Email Address">
+                        <input type="email" class="form-control" name="User[email]" placeholder="Email Address">
                     </div>
                 </div>
                 

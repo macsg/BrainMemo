@@ -74,6 +74,8 @@ class User extends AppModel {
             $this->data[$this->alias]['password'] = $passwordHasher->hash(
                 $this->data[$this->alias]['password']
             );
+        } else {
+            unset($this->data['User']['password']);
         }
         return true;
     }
