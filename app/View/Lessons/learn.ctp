@@ -17,25 +17,16 @@
         <div class="row">
             <div class="col-md-4"></div>
             <div class="list-group center-block col-md-4">
-                <div class="input-group" style="margin:10px">
-                    <span class="input-group-addon" id="sizing-addon2">1</span>
-                    <a href="#" class="list-group-item">Apple</a>
-                </div>
-
-                <div class="input-group" style="margin:10px">
-                    <span class="input-group-addon" id="sizing-addon2">2</span>
-                    <a href="#" class="list-group-item">Aaple</a>
-                </div>
-
-                <div class="input-group" style="margin:10px">
-                    <span class="input-group-addon" id="sizing-addon2">3</span>
-                    <a href="#" class="list-group-item">Applle</a>
-                </div>
-
-                <div class="input-group" style="margin:10px">
-                    <span class="input-group-addon" id="sizing-addon2">4</span>
-                    <a href="#" class="list-group-item">Aplea</a>
-                </div>
+                <?php 
+                    $questionNum = 1;
+                    foreach ($random_answers as $random_answer): ?>
+                    <div class="input-group" style="margin:10px">
+                    <span class="input-group-addon" id="sizing-addon2"><?= $questionNum ?></span>
+                    <?php echo $this->Html->link($random_answer['Card']['back'], array()
+                            , array('class' => 'list-group-item')); ?>
+                     </div>
+                <?php $questionNum=$questionNum+1; endforeach;?>
+                
             </div>
             <div class="col-md-4"></div>
         </div>

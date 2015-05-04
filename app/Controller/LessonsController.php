@@ -22,5 +22,9 @@ class LessonsController extends AppController {
         $cards = $this->Card->find('all',['conditions'=>['Card.deck_id'=>$Decki]]);
         $this->set('cards',$cards);
 
+       // $random_answers = $this->Card
+        $this->set('random_answers', $this->Card->find('all', array('order' => 'rand()',
+            'limit' => 4,
+            )));
     }
 }
