@@ -15,7 +15,6 @@
         echo $this->Html->css('profile.css');
         echo $this->Html->css('owl-carousel/owl.carousel.css');
         echo $this->Html->css('owl-carousel/owl.theme.css');
-        echo $this->Html->css('bootstrap/fileinput.min.css');
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 	?>
