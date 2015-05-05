@@ -102,7 +102,7 @@ class AdminsController extends AppController {
         $this->set('User', $User);
         $this->loadModel('User');      
         if ($this->User->delete($id)) {
-            $this->redirect(['controller' =>'admins','action' => 'managecategory']);
+            $this->redirect(['controller' =>'admins','action' => 'manageuser']);
             $this->Session->setFlash("Remove user".$User['User']['username']);
         }
         else {
@@ -115,10 +115,10 @@ class AdminsController extends AppController {
 
         if ($this->Category->delete($id)) {
             $this->redirect(['controller' =>'admins','action' => 'managecategory']);
-            $this->Session->setFlash(__("Remove aCategory sucessfully"));
+            $this->Session->setFlash(__("Successfully delete category."));
         }
         else {
-            $this->Session->setFlash("ERROR: Cannot delete this user.");
+            $this->Session->setFlash("ERROR: Cannot delete this category.");
         }
     }
 }
