@@ -58,7 +58,7 @@
 
             </div>
             <hr class="seperate">
-            <?php echo $this->Html->link('Back to main page', array('controller' => 'admins', 'action' => 'index'));?></div>   
+            <?php echo $this->Html->link('Back to main page', array('controller' => 'admins', 'action' => 'index'));?></div>
         </div>
     </div>
 </div>
