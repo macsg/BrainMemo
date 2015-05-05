@@ -31,7 +31,7 @@
                 <div class="row">
 
                 <?php foreach ($decks as $decks_show): ?>
-
+                
                     <div class="col-sm-6 col-md-3">
                         <div class="thumbnail">
                             <h3><?= $decks_show['Deck']['name'] ?></h3>
