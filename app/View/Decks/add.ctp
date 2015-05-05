@@ -111,7 +111,12 @@
 
 										<div id="divCard1">
 											<h2>Card #1</h2>
-											<img id="img1" src="/brainmemo/img/200x200.png">
+											<!-- <img id="img1" src="/brainmemo/img/200x200.png"> -->
+											<?php
+											echo $this->Html->image("200x200.png", array(
+											    "alt" => "default"
+											));
+											?>
 											<input  name="data[Card][picture1]" accept="image/*" onchange="readURL(this,'img1')" type="file" id="fileCard1">
 											<label>Your Anwser</label><input name="data[Card][ans1]" type="text" value="" id="anwser1">	
 										</div>	
