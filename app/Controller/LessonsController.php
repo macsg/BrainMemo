@@ -23,7 +23,7 @@ class LessonsController extends AppController {
         $this->set('cards',$cards);
 
        // $random_answers = $this->Card
-        $this->set('random_answers', $this->Card->find('all', array('order' => 'rand()',
+        $this->set('random_answers', $this->Card->find('all', array('conditions'=>['Card.deck_id'=>$Decki],'order' => 'rand()',
             'limit' => 4,
             )));
     }
