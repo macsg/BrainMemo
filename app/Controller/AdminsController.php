@@ -50,7 +50,7 @@ class AdminsController extends AppController {
         ];
         if ($this->User->save($data)) {
             $this->Session->setFlash('User is banned.', 'default', array("class" => 'alert alert-success'));
-            $this->redirect(['controller' =>'admins','action' => 'usermanage']);
+            $this->redirect(['controller' =>'admins','action' => 'manageuser']);
         } else {
             $this->Session->setFlash('Error: cannot ban this account!', 'default', array("class" => 'alert alert-danger'));
         }
@@ -69,7 +69,7 @@ class AdminsController extends AppController {
         ];
         if ($this->User->save($data)) {
             $this->Session->setFlash('User is unbanned.', 'default', array("class" => 'alert alert-success'));
-            $this->redirect(['controller' =>'admins','action' => 'usermanage']);
+            $this->redirect(['controller' =>'admins','action' => 'manageuser']);
         } else {
             $this->Session->setFlash('Error: cannot unban this account!', 'default', array("class" => 'alert alert-danger'));
         }
