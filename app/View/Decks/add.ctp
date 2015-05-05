@@ -111,33 +111,28 @@
 
 										<div id="divCard1">
 											<h2>Card #1</h2>
-											<!-- <img id="img1" src="/brainmemo/img/200x200.png"> -->
-											<?php
-											echo $this->Html->image("200x200.png", array(
-											    "alt" => "default"
-											));
-											?>
+					<?php echo $this->Html->image("200x200.png", array("alt" => "default",'id'=> 'img1'));?>
 											<input  name="data[Card][picture1]" accept="image/*" onchange="readURL(this,'img1')" type="file" id="fileCard1">
 											<label>Your Anwser</label><input name="data[Card][ans1]" type="text" value="" id="anwser1">	
 										</div>	
 										<hr>
 										<div id="divCard2">
 											<h2>Card #2</h2>
-											<img id="img2" src="/brainmemo/img/200x200.png">
+					<?php echo $this->Html->image("200x200.png", array("alt" => "default",'id'=> 'img2'));?>
 											<input name="data[Card][picture2]" accept="image/*" onchange="readURL(this,'img2')" type="file" id="fileCard2">
 											<label>Your Anwser</label><input name="data[Card][ans2]" type="text" value="" id="anwser2">	
 										</div>
 											<hr>
 										<div id="divCard3">
 											<h2>Card #3</h2>
-											<img id="img3" src="/brainmemo/img/200x200.png">
+					<?php echo $this->Html->image("200x200.png", array("alt" => "default",'id'=> 'img3'));?>
 										    <input name="data[Card][picture3]" accept="image/*" onchange="readURL(this,'img3')" type="file" id="fileCard3">
 											<label>Your Anwser</label><input name="data[Card][ans3]" type="text" value="" id="anwser3">	
 										</div>
 											<hr>
 										<div id="divCard4">
 											<h2>Card #4</h2>
-											<img id="img4" src="/brainmemo/img/200x200.png">
+					<?php echo $this->Html->image("200x200.png", array("alt" => "default",'id'=> 'img4'));?>
 							
 											<input name="data[Card][picture4]" accept="image/*" onchange="readURL(this,'img4')" type="file" id="fileCard4">
 											<label>Your Anwser</label><input name="data[Card][ans4]" type="text" value="" id="anwser4">	
