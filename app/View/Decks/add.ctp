@@ -164,11 +164,6 @@
 							</div>
 							<br>
 
-
-
-
-
-
 <script  type="text/javascript">
 
 function addCardForm(){
@@ -177,6 +172,7 @@ function addCardForm(){
 	$("#hdNumFormCard").val(numForm);
 	var stringHTML = '<div id="divCard"'+ numForm +'>';
 	stringHTML += '<h2>Card #'+ numForm +'</h2>';
+	// strintHTML += '<?php echo $this->Html->image("200x200.png", array("alt" => "default",'id'=> 'img4'));?>'
 	stringHTML += '<img id="img'+ numForm +'" src="/brainmemo/img/200x200.png">';
 
 	stringHTML += "<input name='data[Card][picture"+numForm+"]' accept='image/*' onchange=readURL(this,'img" + numForm +"') type='file' id='fileCard"+ numForm +"'>";
