@@ -50,7 +50,7 @@
                                 array( 'class' => 'btn btn-warning','escape' => FALSE),'Are you sure to ban user: '.$users['User']['username'].' ?')?></td>
 
                             <td class='text-center'><?php echo $this->Html->link('<i class="glyphicon glyphicon-remove-circle" ></i>',
-                                array('controller' => 'admins','action'=> 'delete',$users['User']['id']),
+                                array('controller' => 'admins','action'=> 'deleteUser',$users['User']['id']),
                                 array( 'class' => 'btn btn-danger','escape' => FALSE),'Are you sure to remove user: '.$users['User']['username'].' ?')?></td>
                         </tr>
                     <?php endforeach;?>

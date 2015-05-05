@@ -309,7 +309,7 @@ class ViewTaskTest extends CakeTestCase {
 
 		$this->Task->expects($this->at(0))->method('createFile')
 			->with(
-				TMP . 'ViewTaskComments' . DS . 'edit.ctp',
+				TMP . 'ViewTaskComments' . DS . 'edit_cat.ctp',
 				new PHPUnit_Framework_Constraint_IsAnything()
 			);
 		$this->Task->bake('edit', true);
@@ -384,7 +384,7 @@ class ViewTaskTest extends CakeTestCase {
 			);
 		$this->Task->expects($this->at(1))->method('createFile')
 			->with(
-				TMP . 'ViewTaskComments' . DS . 'edit.ctp',
+				TMP . 'ViewTaskComments' . DS . 'edit_cat.ctp',
 				$this->stringContains('Edit View Task Comment')
 			);
 		$this->Task->expects($this->at(2))->method('createFile')
@@ -598,7 +598,7 @@ class ViewTaskTest extends CakeTestCase {
 
 		$this->Task->expects($this->at(6))->method('createFile')
 			->with(
-				TMP . 'ViewTaskComments' . DS . 'edit.ctp',
+				TMP . 'ViewTaskComments' . DS . 'edit_cat.ctp',
 				$this->stringContains('Edit View Task Comment')
 			);
 
