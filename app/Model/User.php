@@ -64,19 +64,19 @@ class User extends AppModel {
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+				'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		)
 	);
 
     public function beforeSave($options = array()) {
-        if (isset($this->data[$this->alias]['password'])) {
+        if (!empty($this->data[$this->alias]['password'])) {
             $passwordHasher = new BlowfishPasswordHasher();
             $this->data[$this->alias]['password'] = $passwordHasher->hash(
                 $this->data[$this->alias]['password']
             );
         } else {
-            unset($this->data['User']['password']);
+            unset($this->data[$this->alias]['password']);
         }
         return true;
     }

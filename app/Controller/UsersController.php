@@ -26,11 +26,11 @@ class UsersController extends AppController {
             $this->User->create();
             $data = [
                 'User' => [
-                    'username' => trim($this->request->data['User']['username']),
-                    'firstname' => trim($this->request->data['User']['firstname']),
-                    'lastname' => trim($this->request->data['User']['lastname']),
-                    'email' => trim($this->request->data['User']['email']),
-                    'password' => trim($this->request->data['User']['password']),
+                    'username' => trim($this->request->data['username']),
+                    'firstname' => trim($this->request->data['firstname']),
+                    'lastname' => trim($this->request->data['lastname']),
+                    'email' => trim($this->request->data['email']),
+                    'password' => trim($this->request->data['password']),
                     'role' => '2',
                     'status' => '1',
                     'created' => date("Y-m-d H:i:s"),
@@ -110,12 +110,11 @@ class UsersController extends AppController {
                 $this->Session->setFlash(__('The user has been saved'));
                 return $this->redirect(array('action' => 'view', $id));
             }
-            $this->Session->setFlash(
-                __('The user could not be saved. Please, try again.')
+            $this->Session->setFlash(__('The user could not be saved. Please, try again.')
             );
         } else {
             $this->request->data = $this->User->read(null, $id);
-
+            unset($this->request->data['User']['password']);
         }
     }
 

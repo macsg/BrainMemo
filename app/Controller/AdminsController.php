@@ -15,7 +15,7 @@ class AdminsController extends AppController {
         $users = $this->User->find('all', array(
             'conditions' => array('User.role' => '2')
         ));
-        pr($this->request->User);  
+        //pr($this->request->User);
         $this->set('users', $users);
     }
 

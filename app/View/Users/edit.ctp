@@ -15,7 +15,8 @@
                                         'class' => 'form-control',
                                         'disabled' => 'disabled'));
                                     echo $this->Form->input('password', array(
-                                        'class' => 'form-control'
+                                        'class' => 'form-control',
+                                        'required' => false
                                     ));
                                     echo $this->Form->input('firstname', array(
                                         'class' => 'form-control'
